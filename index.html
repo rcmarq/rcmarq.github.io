@@ -6,23 +6,30 @@
   <title>Dr. Ren T.C. Marquez – Researcher</title>
   <meta name="description" content="Academic researcher in Isotope Geochemistry and Cosmochemistry." />
   <link rel="stylesheet" href="style.css" />
-  <!-- Favicon placeholder: replace with your own -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
 </head>
 <body>
 
   <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
   <nav>
-    <span class="nav-brand">Dr. Ren T.C. Marquez</span>
+    <a href="index.html" class="nav-brand">Dr. Ren T.C. Marquez</a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <!-- About dropdown -->
+      <li class="nav-dropdown" id="about-dropdown">
+        <a href="#about" onclick="toggleDropdown(event, 'about-dropdown')">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </li>
+
+      <li><a href="news.html">News</a></li>
+      <li><a href="tools.html">Tools</a></li>
     </ul>
   </nav>
 
@@ -42,17 +49,17 @@
       <p>
         Prior to joining ASU, I completed my Ph.D. in Geochemistry at Caltech, where I worked
         on developing high-precision isotopic tools for studying some of the earliest solids
-        in the Solar System. 
+        in the Solar System.
       </p>
 
       <!--
         ✏️ EDIT: Update research interest tags below.
       -->
       <div class="tag-list">
-        <span class="tag">Isotope Geocemistry</span>
+        <span class="tag">Isotope Geochemistry</span>
         <span class="tag">Cosmochemistry</span>
         <span class="tag">Meteoritics</span>
-        <span class="tag">Geohronology</span>
+        <span class="tag">Geochronology</span>
         <span class="tag">Planetary Science</span>
       </div>
 
@@ -60,7 +67,7 @@
         ✏️ EDIT: Update links below. Remove any you don't use.
       -->
       <div class="social-links">
-        <a href="mailto:ren.marquez.edu">
+        <a href="mailto:ren.marquez@asu.edu">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           ren.marquez@asu.edu
         </a>
@@ -79,11 +86,6 @@
       </div>
     </div>
 
-    <!--
-      ✏️ EDIT: Replace the placeholder with your photo.
-      Add your photo as "photo.jpg" in the same folder and uncomment the <img> tag.
-      Delete the placeholder div.
-    -->
     <img src="headshot.jpg" alt="Dr. Ren T.C. Marquez" class="about-photo" />
   </section>
 
@@ -93,7 +95,6 @@
       <p class="section-label">Research</p>
       <h2>Publications</h2>
 
-      <!-- Filter buttons — add/remove categories to match your pub-card data-type values -->
       <div class="pub-filter">
         <button class="active" onclick="filterPubs('all', this)">All</button>
         <button onclick="filterPubs('journal', this)">Journal Articles</button>
@@ -174,14 +175,9 @@
     <p class="section-label">Curriculum Vitae</p>
     <h2>CV</h2>
 
-    <!-- Download box -->
     <div class="cv-download-box">
       <div>
         <h3>Download Full CV</h3>
-        <!--
-          ✏️ EDIT: Replace "cv.pdf" with the actual filename of your CV.
-          Add your CV PDF to the repo root and it will be served automatically.
-        -->
         <p>Last updated April 2026 · PDF, 3 pages</p>
       </div>
       <a href="cv.pdf" download class="btn btn-primary">
@@ -190,7 +186,7 @@
       </a>
     </div>
 
-    <!-- CV Highlights — ✏️ EDIT these entries -->
+    <!-- ✏️ EDIT these entries -->
     <div class="cv-section">
       <h3>Positions</h3>
       <div class="cv-item">
@@ -264,96 +260,6 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════ TOOLS ══════════════════════════════ -->
-  <section id="tools" style="padding:0">
-    <div class="inner" style="padding-top:5rem; padding-bottom:5rem;">
-      <p class="section-label">Interactive</p>
-      <h2>Jupyter Tools</h2>
-      <p style="color:var(--muted); max-width:560px;">
-        Interactive notebooks that run directly in your browser via
-        <a href="https://mybinder.org" target="_blank" rel="noopener">Binder</a> —
-        no installation required. Each tool opens a live Jupyter session in a new tab.
-      </p>
-
-      <div class="tools-grid">
-
-        <!--
-          ✏️ EDIT: Update each tool-card with your actual notebook names and Binder URL.
-
-          How to get a Binder link:
-          1. Push your notebooks to a GitHub repo (can be this same repo, e.g. in a /notebooks folder)
-          2. Go to https://mybinder.org
-          3. Enter your repo URL and the path to the notebook
-          4. Copy the generated link and paste it into the href below.
-
-          Example Binder URL format:
-          https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fyour_notebook.ipynb
-        -->
-
-        <div class="tool-card">
-          <div class="tool-icon">📊</div>
-          <h3>Gene Expression Explorer</h3>
-          <p>Interactively visualize and cluster single-cell RNA-seq data. Upload a counts matrix and explore dimensionality reduction results.</p>
-          <div class="tool-card-actions">
-            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fgene_expression_explorer.ipynb"
-               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              Launch Notebook ↗
-            </a>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/gene_expression_explorer.ipynb"
-               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              View Source
-            </a>
-          </div>
-        </div>
-
-        <div class="tool-card">
-          <div class="tool-icon">🧬</div>
-          <h3>Regulatory Network Viewer</h3>
-          <p>Input a gene list and visualize inferred regulatory interactions as an interactive network graph.</p>
-          <div class="tool-card-actions">
-            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fnetwork_viewer.ipynb"
-               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              Launch Notebook ↗
-            </a>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/network_viewer.ipynb"
-               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              View Source
-            </a>
-          </div>
-        </div>
-
-        <div class="tool-card">
-          <div class="tool-icon">📈</div>
-          <h3>RNA Velocity Demo</h3>
-          <p>A tutorial notebook walking through RNA velocity analysis on a curated example dataset. Ideal for newcomers to the method.</p>
-          <div class="tool-card-actions">
-            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Frna_velocity_demo.ipynb"
-               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              Launch Notebook ↗
-            </a>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/rna_velocity_demo.ipynb"
-               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-              View Source
-            </a>
-          </div>
-        </div>
-
-        <!--
-          ✏️ Add more tool-card blocks here to add more notebooks.
-        -->
-
-      </div>
-
-      <!-- Binder info box -->
-      <div style="margin-top:2.5rem; padding:1.25rem 1.5rem; background:white; border:1px solid var(--border); border-radius:10px; font-size:0.85rem; color:var(--muted);">
-        <strong style="color:var(--text);">ℹ️ Note on launch times:</strong>
-        The first launch of a notebook may take 1–3 minutes while Binder builds the environment.
-        Subsequent launches are faster. All computation happens on free Binder servers —
-        no data is stored after you close the session.
-      </div>
-    </div>
-  </section>
-
   <!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
   <section id="contact">
     <p class="section-label">Get in Touch</p>
@@ -363,30 +269,25 @@
       <div class="contact-info">
         <p>I welcome inquiries from prospective graduate students, collaborators, and members of the press.</p>
 
-        <!--
-          ✏️ EDIT: Update the contact details below.
-        -->
+        <!-- ✏️ EDIT: Update the contact details below. -->
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <a href="mailto:jane.smith@example.edu">jane.smith@example.edu</a>
+          <a href="mailto:ren.marquez@asu.edu">ren.marquez@asu.edu</a>
         </div>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Department of Computational Biology<br>
-          Room 314, Science Hall<br>
-          Example University, City, ST 00000
+          Buseck Center for Meteorite Studies<br>
+          School of Earth and Space Exploration<br>
+          Arizona State University, Tempe, AZ
         </div>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Office hours: Tuesdays 2–4 PM (or by appointment)
+          <!-- ✏️ EDIT: Update office hours -->
+          Office hours: by appointment
         </div>
       </div>
 
-      <!--
-        This form uses Formspree (https://formspree.io) — free for up to 50 submissions/month.
-        ✏️ EDIT: Replace "YOUR_FORM_ID" with your Formspree endpoint, e.g. https://formspree.io/f/abcd1234
-        Sign up at formspree.io, create a form, and paste your endpoint into the action below.
-      -->
+      <!-- ✏️ EDIT: Replace YOUR_FORM_ID with your Formspree form ID -->
       <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
@@ -398,7 +299,7 @@
         </div>
         <div class="form-group">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="e.g. PhD inquiry, collaboration" />
+          <input type="text" id="subject" name="subject" placeholder="e.g. collaboration, press inquiry" />
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -413,10 +314,9 @@
   <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
   <footer>
     <p>
-      © 2026 Jane Smith ·
-      <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">View on GitHub</a> ·
-      Built with plain HTML/CSS · Hosted on
-      <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+      © 2026 Ren T.C. Marquez ·
+      <a href="https://github.com/rcmarq" target="_blank" rel="noopener">GitHub</a> ·
+      Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
     </p>
   </footer>
 
@@ -427,15 +327,30 @@
       document.getElementById('nav-links').classList.toggle('open');
     }
 
+    // ── Dropdown toggle (touch / click) ──
+    function toggleDropdown(e, id) {
+      // On desktop the CSS hover handles it; this is for mobile tap
+      if (window.innerWidth <= 720) {
+        e.preventDefault();
+        document.getElementById(id).classList.toggle('open');
+      }
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+
     // ── Active nav link on scroll ──
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(s => {
         if (window.scrollY >= s.offsetTop - 100) current = s.id;
       });
-      navLinks.forEach(a => {
+      document.querySelectorAll('.dropdown-menu a, .nav-links > li > a').forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     }, { passive: true });

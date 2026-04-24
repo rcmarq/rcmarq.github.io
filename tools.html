@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools – Dr. Ren T.C. Marquez</title>
+  <meta name="description" content="Interactive Jupyter notebook tools for isotope geochemistry and cosmochemistry." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+  <nav>
+    <a href="index.html" class="nav-brand">Dr. Ren T.C. Marquez</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+
+      <li class="nav-dropdown" id="about-dropdown">
+        <a href="index.html#about" onclick="toggleDropdown(event, 'about-dropdown')">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#cv">CV</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </li>
+
+      <li><a href="news.html">News</a></li>
+      <li><a href="tools.html" class="active">Tools</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero">
+    <p class="section-label">Interactive</p>
+    <h2>Jupyter Tools</h2>
+    <p>
+      Interactive notebooks that run directly in your browser via
+      <a href="https://mybinder.org" target="_blank" rel="noopener">Binder</a> —
+      no installation required. Each tool opens a live Jupyter session in a new tab.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════ TOOLS GRID ══════════════════════════════ -->
+  <div class="tools-wrap">
+    <div class="inner">
+      <div class="tools-grid">
+
+        <!--
+          ✏️ EDIT: Update each tool-card with your actual notebook names and Binder URL.
+
+          How to get a Binder link:
+          1. Push your notebooks to a GitHub repo (e.g. in a /notebooks folder)
+          2. Go to https://mybinder.org
+          3. Enter your repo URL and the path to the notebook
+          4. Copy the generated link and paste it into the href below.
+
+          Example Binder URL format:
+          https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fyour_notebook.ipynb
+        -->
+
+        <div class="tool-card">
+          <div class="tool-icon">📊</div>
+          <h3>Tool Name</h3>
+          <p>Describe what this notebook does and who it's for in a sentence or two.</p>
+          <div class="tool-card-actions">
+            <a href="https://mybinder.org/v2/gh/rcmarq/YOUR_REPO/HEAD?labpath=notebooks%2Fyour_notebook.ipynb"
+               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              Launch Notebook ↗
+            </a>
+            <a href="https://github.com/rcmarq/YOUR_REPO/blob/main/notebooks/your_notebook.ipynb"
+               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              View Source
+            </a>
+          </div>
+        </div>
+
+        <!--
+          ✏️ Copy and paste the block above to add more tools.
+        -->
+
+      </div>
+
+      <!-- Binder info box -->
+      <div style="margin-top:2.5rem; padding:1.25rem 1.5rem; background:white; border:1px solid var(--border); border-radius:10px; font-size:0.85rem; color:var(--muted);">
+        <strong style="color:var(--text);">ℹ️ Note on launch times:</strong>
+        The first launch of a notebook may take 1–3 minutes while Binder builds the environment.
+        Subsequent launches are faster. All computation happens on free Binder servers —
+        no data is stored after you close the session.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer>
+    <p>
+      © 2026 Ren T.C. Marquez ·
+      <a href="https://github.com/rcmarq" target="_blank" rel="noopener">GitHub</a> ·
+      Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+    function toggleDropdown(e, id) {
+      if (window.innerWidth <= 720) {
+        e.preventDefault();
+        document.getElementById(id).classList.toggle('open');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>

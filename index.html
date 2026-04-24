@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Jane Smith – Researcher</title>
+  <meta name="description" content="Academic researcher in computational biology and data-driven genomics." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon placeholder: replace with your own -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+  <nav>
+    <span class="nav-brand">Dr. Jane Smith</span>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+  <section id="about">
+    <div class="about-text">
+      <p class="section-label">About</p>
+      <h2>Jane Smith, PhD</h2>
+
+      <!--
+        ✏️ EDIT: Replace the bio paragraphs below with your own.
+      -->
+      <p>
+        I am an Assistant Professor in the Department of Computational Biology at
+        Example University, and a faculty affiliate of the Center for Data-Driven
+        Genomics. My research sits at the intersection of machine learning, single-cell
+        genomics, and systems biology.
+      </p>
+      <p>
+        Before joining Example University, I completed my PhD at MIT and was a
+        postdoctoral fellow at the Broad Institute. I am currently funded by NIH R01
+        and NSF CAREER awards.
+      </p>
+
+      <!--
+        ✏️ EDIT: Update research interest tags below.
+      -->
+      <div class="tag-list">
+        <span class="tag">Computational Biology</span>
+        <span class="tag">Single-Cell Genomics</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Systems Biology</span>
+        <span class="tag">Gene Regulation</span>
+      </div>
+
+      <!--
+        ✏️ EDIT: Update links below. Remove any you don't use.
+      -->
+      <div class="social-links">
+        <a href="mailto:jane.smith@example.edu">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          jane.smith@example.edu
+        </a>
+        <a href="https://scholar.google.com" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/janesmith" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="https://twitter.com/janesmith" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @janesmith
+        </a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.466 3.872-3.722 0-2.016-1.113-3.722-3.884-3.722h-2.285z"/></svg>
+          ORCID
+        </a>
+      </div>
+    </div>
+
+    <!--
+      ✏️ EDIT: Replace the placeholder with your photo.
+      Add your photo as "photo.jpg" in the same folder and uncomment the <img> tag.
+      Delete the placeholder div.
+    -->
+    <div class="about-photo-placeholder" title="Add your photo as photo.jpg">🔬</div>
+    <!-- <img src="photo.jpg" alt="Dr. Jane Smith" class="about-photo" /> -->
+  </section>
+
+  <!-- ══════════════════════════════ PUBLICATIONS ══════════════════════════════ -->
+  <section id="publications" style="padding:0">
+    <div class="inner" style="padding-top:5rem; padding-bottom:5rem;">
+      <p class="section-label">Research</p>
+      <h2>Publications</h2>
+
+      <!-- Filter buttons — add/remove categories to match your pub-card data-type values -->
+      <div class="pub-filter">
+        <button class="active" onclick="filterPubs('all', this)">All</button>
+        <button onclick="filterPubs('journal', this)">Journal Articles</button>
+        <button onclick="filterPubs('conference', this)">Conference</button>
+        <button onclick="filterPubs('preprint', this)">Preprints</button>
+      </div>
+
+      <div class="pub-list" id="pub-list">
+
+        <!--
+          ✏️ EDIT: Replace/duplicate these pub-card blocks with your own publications.
+          data-type can be: journal | conference | preprint
+        -->
+
+        <div class="pub-card" data-type="journal">
+          <div class="pub-year">2024</div>
+          <div class="pub-title">A scalable framework for single-cell multi-omics integration using graph neural networks</div>
+          <div class="pub-authors"><strong>Smith J</strong>, Patel A, Kumar R, Chen L</div>
+          <div class="pub-venue">Nature Methods, 21(4), 612–625</div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">DOI</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="pub-card" data-type="journal">
+          <div class="pub-year">2023</div>
+          <div class="pub-title">Inferring cell-type-specific gene regulatory networks from sparse single-cell ATAC-seq data</div>
+          <div class="pub-authors"><strong>Smith J</strong>, Johnson M, Lee S</div>
+          <div class="pub-venue">Genome Biology, 24(1), 89</div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">DOI</a>
+            <a href="#">Data</a>
+          </div>
+        </div>
+
+        <div class="pub-card" data-type="conference">
+          <div class="pub-year">2023</div>
+          <div class="pub-title">Contrastive learning for batch-effect-robust representations in genomics</div>
+          <div class="pub-authors">Rodriguez K, <strong>Smith J</strong>, Wang Y</div>
+          <div class="pub-venue">NeurIPS 2023 – Workshop on Machine Learning in Computational Biology</div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">Poster</a>
+          </div>
+        </div>
+
+        <div class="pub-card" data-type="preprint">
+          <div class="pub-year">2024</div>
+          <div class="pub-title">Trajectory-aware foundation models for developmental single-cell atlases</div>
+          <div class="pub-authors"><strong>Smith J</strong>, Okonkwo B, Tanaka H, Park J</div>
+          <div class="pub-venue">bioRxiv (preprint) · Under review at Cell Systems</div>
+          <div class="pub-links">
+            <a href="#">Preprint</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="pub-card" data-type="journal">
+          <div class="pub-year">2021</div>
+          <div class="pub-title">Probabilistic generative models for single-cell RNA velocity with uncertainty quantification</div>
+          <div class="pub-authors"><strong>Smith J</strong>, Ramirez C, Gupta P</div>
+          <div class="pub-venue">Cell Reports Methods, 1(3), 100043</div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">DOI</a>
+          </div>
+        </div>
+
+      </div><!-- /pub-list -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CV ══════════════════════════════ -->
+  <section id="cv">
+    <p class="section-label">Curriculum Vitae</p>
+    <h2>CV</h2>
+
+    <!-- Download box -->
+    <div class="cv-download-box">
+      <div>
+        <h3>Download Full CV</h3>
+        <!--
+          ✏️ EDIT: Replace "cv.pdf" with the actual filename of your CV.
+          Add your CV PDF to the repo root and it will be served automatically.
+        -->
+        <p>Last updated April 2026 · PDF, 3 pages</p>
+      </div>
+      <a href="cv.pdf" download class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+    </div>
+
+    <!-- CV Highlights — ✏️ EDIT these entries -->
+    <div class="cv-section">
+      <h3>Positions</h3>
+      <div class="cv-item">
+        <div class="cv-item-year">2022–</div>
+        <div class="cv-item-body">
+          <h4>Assistant Professor, Computational Biology</h4>
+          <p>Example University, Department of Computational Biology</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-year">2019–2022</div>
+        <div class="cv-item-body">
+          <h4>Postdoctoral Fellow</h4>
+          <p>Broad Institute of MIT and Harvard · Advisor: Prof. A. Patel</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Education</h3>
+      <div class="cv-item">
+        <div class="cv-item-year">2014–2019</div>
+        <div class="cv-item-body">
+          <h4>PhD, Computational Biology</h4>
+          <p>Massachusetts Institute of Technology · Advisor: Prof. R. Kumar</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-year">2010–2014</div>
+        <div class="cv-item-body">
+          <h4>BSc, Computer Science &amp; Biology (double major)</h4>
+          <p>University of Michigan, Ann Arbor · <em>Summa Cum Laude</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Selected Funding</h3>
+      <div class="cv-item">
+        <div class="cv-item-year">2023–2028</div>
+        <div class="cv-item-body">
+          <h4>NSF CAREER Award</h4>
+          <p>National Science Foundation · $600,000</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-year">2022–2027</div>
+        <div class="cv-item-body">
+          <h4>NIH R01 – Gene Regulatory Networks in Development</h4>
+          <p>National Institutes of Health · $1.2M (PI)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Selected Awards</h3>
+      <div class="cv-item">
+        <div class="cv-item-year">2024</div>
+        <div class="cv-item-body">
+          <h4>Early Career Investigator Award</h4>
+          <p>International Society for Computational Biology (ISCB)</p>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-year">2023</div>
+        <div class="cv-item-body">
+          <h4>Chan Zuckerberg Initiative Investigator</h4>
+          <p>Human Cell Atlas Data Coordination Platform</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ TOOLS ══════════════════════════════ -->
+  <section id="tools" style="padding:0">
+    <div class="inner" style="padding-top:5rem; padding-bottom:5rem;">
+      <p class="section-label">Interactive</p>
+      <h2>Jupyter Tools</h2>
+      <p style="color:var(--muted); max-width:560px;">
+        Interactive notebooks that run directly in your browser via
+        <a href="https://mybinder.org" target="_blank" rel="noopener">Binder</a> —
+        no installation required. Each tool opens a live Jupyter session in a new tab.
+      </p>
+
+      <div class="tools-grid">
+
+        <!--
+          ✏️ EDIT: Update each tool-card with your actual notebook names and Binder URL.
+
+          How to get a Binder link:
+          1. Push your notebooks to a GitHub repo (can be this same repo, e.g. in a /notebooks folder)
+          2. Go to https://mybinder.org
+          3. Enter your repo URL and the path to the notebook
+          4. Copy the generated link and paste it into the href below.
+
+          Example Binder URL format:
+          https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fyour_notebook.ipynb
+        -->
+
+        <div class="tool-card">
+          <div class="tool-icon">📊</div>
+          <h3>Gene Expression Explorer</h3>
+          <p>Interactively visualize and cluster single-cell RNA-seq data. Upload a counts matrix and explore dimensionality reduction results.</p>
+          <div class="tool-card-actions">
+            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fgene_expression_explorer.ipynb"
+               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              Launch Notebook ↗
+            </a>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/gene_expression_explorer.ipynb"
+               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              View Source
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">🧬</div>
+          <h3>Regulatory Network Viewer</h3>
+          <p>Input a gene list and visualize inferred regulatory interactions as an interactive network graph.</p>
+          <div class="tool-card-actions">
+            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Fnetwork_viewer.ipynb"
+               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              Launch Notebook ↗
+            </a>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/network_viewer.ipynb"
+               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              View Source
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">📈</div>
+          <h3>RNA Velocity Demo</h3>
+          <p>A tutorial notebook walking through RNA velocity analysis on a curated example dataset. Ideal for newcomers to the method.</p>
+          <div class="tool-card-actions">
+            <a href="https://mybinder.org/v2/gh/YOUR_USERNAME/YOUR_REPO/HEAD?labpath=notebooks%2Frna_velocity_demo.ipynb"
+               target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              Launch Notebook ↗
+            </a>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/rna_velocity_demo.ipynb"
+               target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+              View Source
+            </a>
+          </div>
+        </div>
+
+        <!--
+          ✏️ Add more tool-card blocks here to add more notebooks.
+        -->
+
+      </div>
+
+      <!-- Binder info box -->
+      <div style="margin-top:2.5rem; padding:1.25rem 1.5rem; background:white; border:1px solid var(--border); border-radius:10px; font-size:0.85rem; color:var(--muted);">
+        <strong style="color:var(--text);">ℹ️ Note on launch times:</strong>
+        The first launch of a notebook may take 1–3 minutes while Binder builds the environment.
+        Subsequent launches are faster. All computation happens on free Binder servers —
+        no data is stored after you close the session.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+  <section id="contact">
+    <p class="section-label">Get in Touch</p>
+    <h2>Contact</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>I welcome inquiries from prospective graduate students, collaborators, and members of the press.</p>
+
+        <!--
+          ✏️ EDIT: Update the contact details below.
+        -->
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:jane.smith@example.edu">jane.smith@example.edu</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Department of Computational Biology<br>
+          Room 314, Science Hall<br>
+          Example University, City, ST 00000
+        </div>
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Office hours: Tuesdays 2–4 PM (or by appointment)
+        </div>
+      </div>
+
+      <!--
+        This form uses Formspree (https://formspree.io) — free for up to 50 submissions/month.
+        ✏️ EDIT: Replace "YOUR_FORM_ID" with your Formspree endpoint, e.g. https://formspree.io/f/abcd1234
+        Sign up at formspree.io, create a form, and paste your endpoint into the action below.
+      -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="e.g. PhD inquiry, collaboration" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-note">This form is powered by Formspree. Your email will not be shared.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer>
+    <p>
+      © 2026 Jane Smith ·
+      <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">View on GitHub</a> ·
+      Built with plain HTML/CSS · Hosted on
+      <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
+  </footer>
+
+  <!-- ══════════════════════════════ SCRIPTS ══════════════════════════════ -->
+  <script>
+    // ── Mobile nav toggle ──
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    // ── Active nav link on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+
+    // ── Publication filter ──
+    function filterPubs(type, btn) {
+      document.querySelectorAll('.pub-filter button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.pub-card').forEach(card => {
+        card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

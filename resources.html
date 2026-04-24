@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources – Dr. Ren T.C. Marquez</title>
+  <meta name="description" content="Useful resources for isotope geochemistry and cosmochemistry." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+  <nav>
+    <a href="index.html" class="nav-brand">Dr. Ren T.C. Marquez</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li class="nav-dropdown" id="about-dropdown">
+        <a href="index.html#about" onclick="toggleDropdown(event, 'about-dropdown')">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#cv">CV</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+      <li><a href="tools.html">Tools</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero">
+    <p class="section-label">Reference</p>
+    <h2>Resources</h2>
+    <p>A curated list of datasets, software, databases, and reading material I find useful.</p>
+  </div>
+
+  <!-- ══════════════════════════════ TABLES ══════════════════════════════ -->
+  <div class="resources-wrap">
+
+    <!--
+      ✏️ HOW TO ADD A RESOURCE:
+      Find the table section you want (e.g. "Databases"), and add a new <tr> row:
+
+        <tr>
+          <td><a href="https://example.com" target="_blank" rel="noopener">Resource Name</a></td>
+          <td>A short description of what it is and why it's useful.</td>
+        </tr>
+
+      To add a new section, copy an entire <div class="resources-section"> block
+      and change the heading and rows.
+    -->
+
+    <!-- ══ SECTION ══ -->
+    <div class="resources-section">
+      <div class="resources-section-title">Databases</div>
+      <table class="resources-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.meteoritedb.com" target="_blank" rel="noopener">✏️ Resource Name</a></td>
+            <td>Short description of what this database contains and what it's useful for.</td>
+          </tr>
+          <tr>
+            <td><a href="#" target="_blank" rel="noopener">✏️ Resource Name</a></td>
+            <td>Short description.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ══ SECTION ══ -->
+    <div class="resources-section">
+      <div class="resources-section-title">Software &amp; Code</div>
+      <table class="resources-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/rcmarq/cosmo" target="_blank" rel="noopener">COSMO</a></td>
+            <td>Double spike optimization for sample-limited analyses of isotopically anomalous materials. MATLAB-based.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/rcmarq/neb_condense" target="_blank" rel="noopener">NebCondense</a></td>
+            <td>Jupyter notebook that guides student's through L. Grossman's <a href="https://www.sciencedirect.com/science/article/pii/0016703772900786">
+              first calculation of early nebular condensation</a>. This was developed as part of a Ge 141 (Isotope Cosmochemistry) problem set taught by <a href="https://isotoparium.org/">F.L.H. Tissot</a> at Caltech.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ══ SECTION ══ -->
+    <div class="resources-section">
+      <div class="resources-section-title">Reading &amp; Reviews</div>
+      <table class="resources-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#" target="_blank" rel="noopener">✏️ Paper or Book Title</a></td>
+            <td>Why you recommend it and who it's most useful for.</td>
+          </tr>
+          <tr>
+            <td><a href="#" target="_blank" rel="noopener">✏️ Paper or Book Title</a></td>
+            <td>Short description.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--
+      ✏️ Copy a resources-section block above to add more categories.
+    -->
+
+  </div>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer>
+    <p>
+      © 2026 Ren T.C. Marquez ·
+      <a href="https://github.com/rcmarq" target="_blank" rel="noopener">GitHub</a> ·
+      Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+    function toggleDropdown(e, id) {
+      if (window.innerWidth <= 720) {
+        e.preventDefault();
+        document.getElementById(id).classList.toggle('open');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News – Dr. Ren T.C. Marquez</title>
-  <meta name="description" content="News and updates from Dr. Ren T.C. Marquez." />
+  <title>Research – Dr. Ren T.C. Marquez</title>
+  <meta name="description" content="Research updates from Dr. Ren T.C. Marquez." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>" />
 </head>
@@ -17,7 +17,6 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-
       <li class="nav-dropdown" id="about-dropdown">
         <a href="index.html#about" onclick="toggleDropdown(event, 'about-dropdown')">About</a>
         <ul class="dropdown-menu">
@@ -26,9 +25,8 @@
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </li>
-
-      <li><a href="research.html">Research</a></li>
-      <li><a href="news.html" class="active">News</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="news.html">News</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="tools.html">Tools</a></li>
     </ul>
@@ -36,70 +34,55 @@
 
   <!-- ══════════════════════════════ PAGE HERO ══════════════════════════════ -->
   <div class="page-hero">
-    <p class="section-label">Updates</p>
-    <h2>News</h2>
-    <p>Research developments, conference appearances, new papers, and other updates.</p>
+    <p class="section-label">Science</p>
+    <h2>Research</h2>
+    <p>Ongoing projects, research themes, and scientific questions I'm working on.</p>
   </div>
 
   <!-- ══════════════════════════════ POSTS ══════════════════════════════ -->
   <div class="news-wrap">
 
     <!--
-      ✏️ HOW TO ADD A NEW POST:
-      Copy the block below (from "news-post" to "/news-post"), paste it above the existing posts,
-      and fill in the date, tag, title, and text. That's it — newest post always goes on top.
-
-      Tags you can use (or make your own):
-        Paper · Conference · Award · Media · Lab update · Preprint · Talk
+      ✏️ HOW TO ADD A NEW RESEARCH POST:
+      Copy one of the article blocks below, paste it above the others (newest/most
+      important first), and fill in the details. You can use tags like:
+        Project · Collaboration · Method · Field work · In progress · Published
     -->
 
     <!-- ══ POST ══ -->
     <article class="news-post">
       <div class="news-meta">
-        <span class="news-date">April 2026</span>
-        <span class="news-tag">Lab update</span>
+        <span class="news-date">Ongoing</span>
+        <span class="news-tag">Project</span>
       </div>
-      <h3>Site launched</h3>
+      <h3>✏️ Research Project Title</h3>
       <p>
-        Welcome to my new research website! I'll be using this space to share updates on
-        ongoing projects, new publications, conference talks, and other developments from
-        the lab. Check back for updates.
+        Describe the project here — what scientific question you're addressing, what
+        approaches or methods you're using, and what you hope to find. A few sentences
+        is enough; this doesn't need to be a full abstract.
+      </p>
+      <p>
+        You can mention collaborators, funding sources, or any context that helps
+        readers understand the significance of the work.
       </p>
     </article>
 
     <!-- ══ POST ══ -->
     <article class="news-post">
       <div class="news-meta">
-        <span class="news-date">March 2026</span>
-        <span class="news-tag">Paper</span>
+        <span class="news-date">Ongoing</span>
+        <span class="news-tag">Collaboration</span>
       </div>
-      <h3>New paper accepted at [Journal Name]</h3>
+      <h3>✏️ Another Research Theme</h3>
       <p>
-        ✏️ EDIT: Write a short summary of the paper here — what you found, why it matters,
-        and who it's relevant to. Keep it accessible to a broad scientific audience.
+        Another area of your research program. You might describe how this connects
+        to the broader questions in your field, or how it complements your other work.
       </p>
-      <p>
-        Full citation: <em>Marquez R.T.C. et al. (2026). Title of the paper. Journal Name.</em>
-      </p>
-      <a href="#" class="read-more">Read the paper →</a>
-    </article>
-
-    <!-- ══ POST ══ -->
-    <article class="news-post">
-      <div class="news-meta">
-        <span class="news-date">January 2026</span>
-        <span class="news-tag">Conference</span>
-      </div>
-      <h3>Talk at [Conference Name]</h3>
-      <p>
-        ✏️ EDIT: Describe the talk, the conference, and any key takeaways or reactions.
-        You can also link to slides or a recording if available.
-      </p>
-      <a href="#" class="read-more">View slides →</a>
+      <a href="index.html#publications" class="read-more">See related publications →</a>
     </article>
 
     <!--
-      ✏️ Paste new posts above this line, newest first.
+      ✏️ Paste new research posts above this line.
     -->
 
   </div>

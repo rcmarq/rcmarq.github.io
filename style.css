@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --accent:    #1a56a0;
-  --accent-lt: #e8f0fb;
+  --accent:    #094f6a;
+  --accent-lt: #daeef5;
   --text:      #1c1c1e;
   --muted:     #6e6e73;
   --border:    #d1d1d6;
@@ -325,7 +325,7 @@ h3 {
   border: none;
 }
 .btn-primary { background: var(--accent); color: white; }
-.btn-primary:hover { background: #1348a0; color: white; text-decoration: none; }
+.btn-primary:hover { background: #063d52; color: white; text-decoration: none; }
 .btn-outline { background: white; color: var(--accent); border: 1.5px solid var(--accent); }
 .btn-outline:hover { background: var(--accent); color: white; text-decoration: none; }
 
@@ -407,6 +407,57 @@ h3 {
   color: var(--accent);
 }
 .news-post a.read-more:hover { text-decoration: underline; }
+
+/* ── Resources Table ── */
+.resources-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem 5rem; }
+.resources-section { margin-bottom: 3rem; }
+.resources-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.resources-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.resources-table thead th {
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 0.6rem 1rem;
+  background: var(--bg-alt);
+  border-bottom: 2px solid var(--border);
+}
+.resources-table thead th:first-child { border-radius: 8px 0 0 0; }
+.resources-table thead th:last-child { border-radius: 0 8px 0 0; }
+.resources-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+.resources-table tbody tr:last-child { border-bottom: none; }
+.resources-table tbody tr:hover { background: var(--accent-lt); }
+.resources-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  vertical-align: top;
+}
+.resources-table td:first-child {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  width: 220px;
+}
+.resources-table td:first-child a { color: var(--accent); }
+.resources-table td:first-child a:hover { text-decoration: underline; }
+.resources-table td:last-child { color: var(--muted); }
 
 /* ── Contact ── */
 #contact { padding: 5rem 2rem; }

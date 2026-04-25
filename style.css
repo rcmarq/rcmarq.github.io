@@ -297,6 +297,17 @@ h3 {
 }
 .pub-links a:hover { background: var(--accent); color: white; text-decoration: none; }
 
+/* ── Abstract cards (compact) ── */
+.pub-card--abstract {
+  padding: 0.75rem 1.1rem;
+  background: var(--bg-alt);
+}
+.pub-card--abstract .pub-year { font-size: 0.7rem; }
+.pub-card--abstract .pub-title { font-size: 0.88rem; }
+.pub-card--abstract .pub-authors { font-size: 0.78rem; }
+.pub-card--abstract .pub-venue { font-size: 0.75rem; margin-bottom: 0.5rem; }
+.pub-card--abstract .pub-links a { font-size: 0.72rem; padding: 0.15rem 0.5rem; }
+
 /* ── Publication Paginator ── */
 .pub-paginator {
   display: flex;
@@ -478,6 +489,14 @@ h3 {
   padding-bottom: 0.4rem;
   margin-bottom: 0.5rem;
 }
+.resources-section-blurb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.4rem 0 0.75rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
 .resources-table {
   width: 100%;
   border-collapse: collapse;

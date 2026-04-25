@@ -31,7 +31,7 @@
       <li><a href="research.html">Research</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li><a href="tools.html">Tools</a></li>
+      <li><a href="jupyter.html">Jupyter</a></li>
     </ul>
   </nav>
 
@@ -92,14 +92,16 @@
 
       <div class="pub-filter">
         <button class="active" onclick="filterPubs('all', this)">All</button>
-        <button onclick="filterPubs('journal', this)">Journal Articles</button>
-        <button onclick="filterPubs('conference', this)">Conference</button>
-        <button onclick="filterPubs('thesis', this)">Others</button>
+        <button onclick="filterPubs('cosmochemistry', this)">Cosmochemistry</button>
+        <button onclick="filterPubs('isotope-geochemistry', this)">Isotope Geochemistry</button>
+        <button onclick="filterPubs('methods', this)">Methods</button>
+        <button onclick="filterPubs('paleoceanography', this)">Paleoceanography</button>
+        <button onclick="filterPubs('abstracts', this)">Abstracts</button>
       </div>
 
       <div class="pub-list" id="pub-list">
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="cosmochemistry isotope-geochemistry">
           <div class="pub-year">2025</div>
           <div class="pub-title">Rare earth element nucleosynthetic anomalies and dust transport in the protoplanetary disk</div>
           <div class="pub-authors">Justin Y. Hu, François L.H. Tissot, Ren T.C. Marquez, Oliver Shorttle, Cathie J. Clarke, Andrew D. Sellek, Nicolas Dauphas, Bruce L.A. Charlier, Ingo Leya, Reika Yokochi, Thomas J. Ireland, Helen M. Williams</div>
@@ -110,7 +112,7 @@
           </div>
         </div>
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="cosmochemistry isotope-geochemistry">
           <div class="pub-year">2024</div>
           <div class="pub-title">Snapshots of an Evolving Solar Nebula Recorded in Nucleosynthetic Sr and Ba Signatures of Early Condensates</div>
           <div class="pub-authors">Ren T.C. Marquez, Bruce L.A. Charlier, Francois L.H. Tissot</div>
@@ -121,7 +123,7 @@
           </div>
         </div>
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="isotope-geochemistry methods">
           <div class="pub-year">2023</div>
           <div class="pub-title">Spurious molybdenum isotope anomalies resulting from non-exponential mass fractionation</div>
           <div class="pub-authors">Gerrit Budde, Francois L.H. Tissot, Thorsten Kleine, Ren T.C. Marquez</div>
@@ -131,7 +133,7 @@
           </div>
         </div>
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="methods isotope-geochemistry">
           <div class="pub-year">2022</div>
           <div class="pub-title">COSMO: Double spike optimization for sample-limited analyses of isotopically anomalous materials</div>
           <div class="pub-authors">Ren T.C. Marquez, Francois L.H. Tissot</div>
@@ -142,7 +144,7 @@
           </div>
         </div>
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="cosmochemistry isotope-geochemistry">
           <div class="pub-year">2021</div>
           <div class="pub-title">Survival of presolar p-nuclide carriers in the nebula revealed by stepwise leaching of Allende refractory inclusions</div>
           <div class="pub-authors">Bruce L.A. Charlier, Francois L.H. Tissot, Hauke Vollstaedt, Nicolas Dauphas, Colin J.N. Wilson, Ren T.C. Marquez</div>
@@ -153,7 +155,7 @@
           </div>
         </div>
 
-        <div class="pub-card" data-type="journal">
+        <div class="pub-card" data-categories="paleoceanography isotope-geochemistry">
           <div class="pub-year">2017</div>
           <div class="pub-title">The seawater osmium isotope record of South China Sea: Implications on its history and evolution</div>
           <div class="pub-authors">Ren T.C. Marquez, Maria Luisa G. Tejada, Katsuhiko Suzuki, Alyssa M. Peleo-Alampay, Kosuke T. Goto, Sangmin Hyun, Ryoko Senda</div>
@@ -161,6 +163,131 @@
           <div class="pub-links">
             <a href="https://doi.org/10.1016/j.margeo.2017.07.018">DOI</a>
           </div>
+        </div>
+
+        <!-- ══ ABSTRACTS ══ -->
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry">
+          <div class="pub-year">2025</div>
+          <div class="pub-title">Elemental, Sr and Pb isotopic variability of alteration phases in Nakhla and Yamato 000593: Insights from step leaching experiments</div>
+          <div class="pub-authors">BLA Charlier, RTC Marquez, CJN Wilson</div>
+          <div class="pub-venue">Goldschmidt 2025</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry">
+          <div class="pub-year">2024</div>
+          <div class="pub-title">Carriers of Extreme Strontium Anomalies in Early Solar System Condensates</div>
+          <div class="pub-authors">RTC Marquez, BLA Charlier, FLH Tissot</div>
+          <div class="pub-venue">LPSC 2024</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2024/pdf/2010.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry">
+          <div class="pub-year">2024</div>
+          <div class="pub-title">Mg Isotope Composition of CAIs from CV Chondrites and Implication for Early Solar System Heterogeneity</div>
+          <div class="pub-authors">H Li, G Budde, H Tang, RT Marquez, MA Ivanova, FLH Tissot</div>
+          <div class="pub-venue">Goldschmidt 2024</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry">
+          <div class="pub-year">2024</div>
+          <div class="pub-title">Near- and mid-infrared reflectance mapping of calcium-aluminum-rich inclusions and applications for remote sensing of asteroids</div>
+          <div class="pub-authors">J Mueller, K de Kleer, BL Ehlmann, F Tissot, GR Rossman, RTC Marquez, et al.</div>
+          <div class="pub-venue">AGU Fall 2024</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry">
+          <div class="pub-year">2023</div>
+          <div class="pub-title">Snapshots of an Evolving Solar Nebula Recorded in Nucleosynthetic Strontium and Barium Signatures of Early Condensates</div>
+          <div class="pub-authors">RTC Marquez, BLA Charlier, FLH Tissot</div>
+          <div class="pub-venue">Met. Soc. 2023</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry methods">
+          <div class="pub-year">2023</div>
+          <div class="pub-title">Molybdenum Isotope Systematics of Calcium-Aluminum-Rich Inclusions</div>
+          <div class="pub-authors">G Budde, RT Marquez, MA Ivanova, FLH Tissot</div>
+          <div class="pub-venue">LPSC 2023</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2023/pdf/2203.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry">
+          <div class="pub-year">2023</div>
+          <div class="pub-title">A Spectral Database of Calcium-Aluminum-Rich Inclusions and Applications to Asteroid Observations</div>
+          <div class="pub-authors">JM Mueller, BL Ehlmann, GR Rossman, RN Greenberger, RT Marquez, et al.</div>
+          <div class="pub-venue">LPSC 2023</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2023/pdf/1925.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts isotope-geochemistry methods">
+          <div class="pub-year">2022</div>
+          <div class="pub-title">Search for the Carriers of P-Process Anomalies in Early Solar System Condensates</div>
+          <div class="pub-authors">RT Marquez, BLA Charlier, PR Heck, FLH Tissot, T Abbott, P Smeets</div>
+          <div class="pub-venue">Goldschmidt 2022</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts isotope-geochemistry methods">
+          <div class="pub-year">2022</div>
+          <div class="pub-title">Apparent Mo Isotope Anomalies Resulting from Non-Exponential Mass Fractionation</div>
+          <div class="pub-authors">G Budde, FLH Tissot, T Kleine, RT Marquez</div>
+          <div class="pub-venue">Goldschmidt 2022</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry">
+          <div class="pub-year">2021</div>
+          <div class="pub-title">Search for the Carriers of Anomalous Nucleosynthetic Signatures in Early Solar System Condensates</div>
+          <div class="pub-authors">RTC Marquez, BLA Charlier, FLH Tissot</div>
+          <div class="pub-venue">LPSC 2021</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2021/pdf/2635.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts cosmochemistry isotope-geochemistry">
+          <div class="pub-year">2021</div>
+          <div class="pub-title">Evidence for the Survival of a P-Process Anomaly Carrier in Fine-Grained CAIs from Allende</div>
+          <div class="pub-authors">FLH Tissot, BLA Charlier, H Vollstaedt, N Dauphas, CJN Wilson, RTC Marquez</div>
+          <div class="pub-venue">LPSC 2021</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2021/pdf/2641.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts methods isotope-geochemistry">
+          <div class="pub-year">2019</div>
+          <div class="pub-title">Optimal Double Spike for High-Precision Measurements of Stable Isotopes in Early Solar System Materials</div>
+          <div class="pub-authors">RTC Marquez, FLH Tissot</div>
+          <div class="pub-venue">LPSC 2019</div>
+          <div class="pub-links">
+            <a href="https://www.hou.usra.edu/meetings/lpsc2019/pdf/3159.pdf" target="_blank" rel="noopener">Abstract</a>
+          </div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts paleoceanography isotope-geochemistry">
+          <div class="pub-year">2019</div>
+          <div class="pub-title">Sedimentary Sulfur Cycling in Deep Ocean Oxygenated Settings</div>
+          <div class="pub-authors">D Johnson, M Gutierrez, T Present, Y Peerthum, RT Marquez, JF Adkins</div>
+          <div class="pub-venue">AGU Fall 2019</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts paleoceanography isotope-geochemistry">
+          <div class="pub-year">2017</div>
+          <div class="pub-title">Tectonic Evolution and History of the South China Sea: Clues from Re-Os Isotopes</div>
+          <div class="pub-authors">RT Marquez, ML Tejada, K Suzuki, A Peleo-Alampay, K Goto, S Hyun, R Senda</div>
+          <div class="pub-venue">Goldschmidt 2017</div>
+        </div>
+
+        <div class="pub-card pub-card--abstract" data-categories="abstracts paleoceanography isotope-geochemistry">
+          <div class="pub-year">2017</div>
+          <div class="pub-title">Comparison of Os Isotope and Be-10 Ages of Hydrogenous Ferromanganese Crusts</div>
+          <div class="pub-authors">KT Goto, A Sakaguchi, MLG Tejada, J Lachner, M Ploner, A Usui, RTC Marquez, et al.</div>
+          <div class="pub-venue">GSA 2017</div>
         </div>
 
       </div><!-- /pub-list -->
@@ -365,7 +492,7 @@
 
     <div class="contact-grid">
       <div class="contact-info">
-        <p>I welcome inquiries from collaborators and anyone interested in the work I do! Please do not hesitate to reach out.</p>
+        <p>I welcome inquiries from collaborators and anyone interested in talking science! Please do not hesitate to reach out.</p>
 
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -463,9 +590,13 @@
     let pubFilter = 'all';
 
     function getVisiblePubs() {
-      return Array.from(document.querySelectorAll('.pub-card')).filter(c =>
-        pubFilter === 'all' || c.dataset.type === pubFilter
-      );
+      const all = Array.from(document.querySelectorAll('.pub-card'));
+      if (pubFilter === 'all') {
+        const papers = all.filter(c => !(c.dataset.categories || '').split(' ').includes('abstracts'));
+        const abstracts = all.filter(c => (c.dataset.categories || '').split(' ').includes('abstracts'));
+        return [...papers, ...abstracts];
+      }
+      return all.filter(c => (c.dataset.categories || '').split(' ').includes(pubFilter));
     }
     function renderPubs() {
       const cards = getVisiblePubs();

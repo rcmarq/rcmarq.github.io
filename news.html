@@ -38,6 +38,13 @@
   <div class="page-hero">
     <p class="section-label">Updates</p>
     <h2>News</h2>
+    <div class="pub-filter" style="margin-bottom:1.25rem;">
+      <button class="active" onclick="filterNews('all', this)">All</button>
+      <button onclick="filterNews('general', this)">General</button>
+      <button onclick="filterNews('conferences', this)">Conferences</button>
+      <button onclick="filterNews('papers', this)">Papers</button>
+      <button onclick="filterNews('lab', this)">Lab</button>
+    </div>
     <p>Research developments, conference appearances, new papers, and other updates.</p>
   </div>
 
@@ -49,14 +56,13 @@
       Copy the block below (from "news-post" to "/news-post"), paste it above the existing posts,
       and fill in the date, tag, title, and text. That's it — newest post always goes on top.
 
-      Tags you can use (or make your own):
-        Paper · Conference · Award · Media · Lab update · Preprint · Talk
+      Set data-category to one of: general · conferences · papers · lab
     -->
 
     <!-- ══ POST ══ -->
-    <article class="news-post">
+    <article class="news-post" data-category="general">
       <div class="news-meta">
-        <span class="news-date">April 2026</span>
+        <span class="news-date">27 April 2026</span>
         <span class="news-tag">General</span>
       </div>
       <h3>Site launched</h3>
@@ -68,39 +74,35 @@
     </article>
 
     <!-- ══ POST ══ -->
-    <article class="news-post">
+    <article class="news-post" data-category="conferences">
       <div class="news-meta">
-        <span class="news-date">March 2026</span>
+        <span class="news-date">16 March 2026</span>
         <span class="news-tag">Conference</span>
       </div>
-      <h3>New paper accepted at [Journal Name]</h3>
+      <h3>Lunar and Planetary Science Conference LVII</h3>
       <p>
-        ✏️ EDIT: Write a short summary of the paper here — what you found, why it matters,
-        and who it's relevant to. Keep it accessible to a broad scientific audience.
+        I presented parts of my work from my Ph.D. that details our new estimate of the
+        initial abundances of cesium-135 in the early Solar System. This revised estimate is much higher
+        than published values (at least two orders of magnitude!). We are proposing that <sup>135</sup>Cs comes from
+        explosive nucleosynthesis akin to <sup>27</sup>Al and <sup>41</sup>Ca.
       </p>
-      <p>
-        Full citation: <em>Marquez R.T.C. et al. (2026). Title of the paper. Journal Name.</em>
-      </p>
-      <a href="#" class="read-more">Read the paper →</a>
-    </article>
-
-    <!-- ══ POST ══ -->
-    <article class="news-post">
-      <div class="news-meta">
-        <span class="news-date">January 2026</span>
-        <span class="news-tag">Conference</span>
-      </div>
-      <h3>Talk at [Conference Name]</h3>
-      <p>
-        ✏️ EDIT: Describe the talk, the conference, and any key takeaways or reactions.
-        You can also link to slides or a recording if available.
-      </p>
-      <a href="#" class="read-more">View slides →</a>
+      <a href="https://www.hou.usra.edu/meetings/lpsc2026/pdf/1300.pdf" class="read-more">Read the abstract →</a>
     </article>
 
     <!--
       ✏️ Paste new posts above this line, newest first.
     -->
+
+    <!-- Paginator -->
+    <div class="pub-paginator">
+      <button class="pub-pag-btn" id="news-prev" onclick="changeNewsPage(-1)" aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <span class="pub-pag-label" id="news-pag-label">1 / 1</span>
+      <button class="pub-pag-btn" id="news-next" onclick="changeNewsPage(1)" aria-label="Next">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
 
   </div>
 
@@ -114,6 +116,43 @@
   </footer>
 
   <script>
+    const NEWS_PER_PAGE = 5;
+    let newsPage = 0;
+    let newsFilter = 'all';
+
+    function getVisibleNews() {
+      const all = Array.from(document.querySelectorAll('.news-post'));
+      if (newsFilter === 'all') return all;
+      return all.filter(p => p.dataset.category === newsFilter);
+    }
+
+    function renderNews() {
+      const posts = getVisibleNews();
+      const totalPages = Math.max(1, Math.ceil(posts.length / NEWS_PER_PAGE));
+      newsPage = Math.min(newsPage, totalPages - 1);
+      const start = newsPage * NEWS_PER_PAGE;
+      document.querySelectorAll('.news-post').forEach(p => p.style.display = 'none');
+      posts.slice(start, start + NEWS_PER_PAGE).forEach(p => p.style.display = '');
+      document.getElementById('news-pag-label').textContent = `${newsPage + 1} / ${totalPages}`;
+      document.getElementById('news-prev').disabled = newsPage === 0;
+      document.getElementById('news-next').disabled = newsPage >= totalPages - 1;
+    }
+
+    function changeNewsPage(dir) {
+      newsPage += dir;
+      renderNews();
+    }
+
+    function filterNews(category, btn) {
+      document.querySelectorAll('.pub-filter button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      newsFilter = category;
+      newsPage = 0;
+      renderNews();
+    }
+
+    renderNews();
+
     function toggleNav() {
       document.getElementById('nav-links').classList.toggle('open');
     }

@@ -476,6 +476,60 @@ h3 {
 }
 .news-post a.read-more:hover { text-decoration: underline; }
 
+/* ── Citation Box ── */
+.cite-box {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+.cite-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  width: 100%;
+  margin: 0;
+}
+.cite-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  width: 100%;
+  margin: 0;
+  margin-bottom: -0.15rem;
+}
+.cite-block {
+  flex: 1;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  color: var(--text);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  min-width: 0;
+}
+.cite-copy-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.cite-copy-btn:hover { background: #063d52; }
+
 /* ── Resources Table ── */
 .resources-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem 5rem; }
 .resources-section { margin-bottom: 3rem; }
@@ -489,6 +543,15 @@ h3 {
   padding-bottom: 0.4rem;
   margin-bottom: 0.5rem;
 }
+.resources-section-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  margin: 0.5rem 0 0.6rem;
+}
+
 .resources-section-blurb {
   font-size: 0.85rem;
   color: var(--muted);

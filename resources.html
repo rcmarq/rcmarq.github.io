@@ -36,7 +36,15 @@
   <div class="page-hero">
     
     <h2>Resources</h2>
-    <p>A curated list of links to tools that may be useful to the general scientific community (especially students, hopefully!).</p>
+    <p>A curated list of resources that may be useful to the general scientific community (especially students, I hope!).</p>
+  </div>
+
+  <!-- ══════════════════════════════ CITATION ══════════════════════════════ -->
+  <div class="cite-box">
+    <p class="cite-label">How to cite</p>
+    <p class="cite-text">If you use any of the tools or resources here in your research, please cite:</p>
+    <div class="cite-block" id="cite-text">Marquez, R.T.C. (2026). <em>renmarquez.science</em>. Retrieved from https://renmarquez.science</div>
+    <button class="cite-copy-btn" onclick="copyCitation()">Copy</button>
   </div>
 
   <!-- ══════════════════════════════ TABLES ══════════════════════════════ -->
@@ -58,6 +66,7 @@
     <!-- ══ SECTION ══ -->
     <div class="resources-section">
       <div class="resources-section-title">Drawings</div>
+      <img src="files/press.png" alt="Gold foil press" class="resources-section-img" />
       <p class="resources-section-blurb">Technical drawings for tools that I've designed for the lab</p>
       <table class="resources-table">
         <thead>
@@ -68,12 +77,18 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="https://www.meteoritedb.com" target="_blank" rel="noopener">✏️ Resource Name</a></td>
-            <td>Short description of what this database contains and what it's useful for.</td>
+            <td><a href="https://drive.google.com/file/d/1i9wyGYtJG6ajS6NqmqqDP1f9P66DJTuW/view?usp=drive_link" target="_blank" rel="noopener">Gold Foil Press</a></td>
+            <td>Design for a small stainless steel press for creating gold foil mounts.</td>
           </tr>
           <tr>
-            <td><a href="#" target="_blank" rel="noopener">✏️ Resource Name</a></td>
-            <td>Short description.</td>
+            <td><a href="https://drive.google.com/file/d/1LpFipOgLr73wkvFfPW_fi4K7Gwi6sS7t/view?usp=drive_link" target="_blank" rel="noopener">NanoSIMS Rounds</a></td>
+            <td>Drawings of two varieties of 10-mm rounds for the NanoSIMS. Design A is for a wire-mounted gold foil and includes
+              part numbers for normal and dovetail micron-sized drill bits. Design B is a simple ring for epoxy mounting. 
+            </td>
+          </tr>
+          <tr>
+            <td><a href="https://drive.google.com/file/d/1c0y87vq1ax4CpKBGfAsXIWh3ucm6yeN_/view?usp=drive_link" target="_blank" rel="noopener">NanoSIMS Rounds Case</a></td>
+            <td>Prototype design for case to hold 10-mm NanoSIMS rounds. Instructions for assembly and usage coming soon!</td>
           </tr>
         </tbody>
       </table>
@@ -93,7 +108,7 @@
         <tbody>
           <tr>
             <td><a href="https://github.com/rcmarq/cosmo" target="_blank" rel="noopener">COSMO</a></td>
-            <td>Double spike optimization for sample-limited analyses of isotopically anomalous materials. MATLAB-based.</td>
+            <td>Double spike optimization for sample-limited analyses of isotopically anomalous materials. MATLAB-based (I get the irony given the adage above). Python-equivalent coming soon!</td>
           </tr>
           <tr>
             <td><a href="https://github.com/rcmarq/neb_condense" target="_blank" rel="noopener">NebCondense</a></td>
@@ -104,10 +119,12 @@
       </table>
     </div>
 
+
     <!-- ══ SECTION ══ -->
     <div class="resources-section">
-      <div class="resources-section-title">Reading &amp; Reviews</div>
-      <p class="resources-section-blurb">✏️ Add a short blurb about this section here.</p>
+      <div class="resources-section-title">Scientific Illustration</div>
+      <img src="files/figure.png" alt="Scientific illustration" class="resources-section-img" style="object-position: bottom; max-height: 260px;" />
+      <p class="resources-section-blurb">Resources for making clear, publication-quality scientific figures.</p>
       <table class="resources-table">
         <thead>
           <tr>
@@ -117,12 +134,19 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#" target="_blank" rel="noopener">✏️ Paper or Book Title</a></td>
-            <td>Why you recommend it and who it's most useful for.</td>
+            <td><a href="https://drive.google.com/file/d/1VLk7ZYwcMzr4kTSsWECznQ08LhyVK6i1/view?usp=drive_link" target="_blank" rel="noopener">Half-Width Illustrator Artboard</a></td>
+            <td>Template artboard for half-width figures in letter format (following PNAS-style margins). 
+              Draw on Artboard 1, which has 1/8"-margins relative to Artboard 2.   
+            </td>
           </tr>
           <tr>
-            <td><a href="#" target="_blank" rel="noopener">✏️ Paper or Book Title</a></td>
-            <td>Short description.</td>
+            <td><a href="https://drive.google.com/file/d/1rMocZggc16HnEWzc9cYifAQCGSn7-QoX/view?usp=drive_link" target="_blank" rel="noopener">Full-width Illustrator Artboard</a></td>
+            <td>Template artboard for full-width figures in letter format (following PNAS-style margins). 
+              Draw on Artboard 1, which has 1/8"-margins relative to Artboard 2.</td>
+          </tr>
+          <tr>
+            <td><a href="https://drive.google.com/file/d/1J5DiTcbzlurMgDiIB5IiTpvzzcp9Ym3j/view?usp=drive_link" target="_blank" rel="noopener">Bentons Sans</a></td>
+            <td>Download the Sans Serif font used in all of my figures (and this site!)</td>
           </tr>
         </tbody>
       </table>
@@ -144,6 +168,14 @@
   </footer>
 
   <script>
+    function copyCitation() {
+      const text = document.getElementById('cite-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.cite-copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    }
     function toggleNav() {
       document.getElementById('nav-links').classList.toggle('open');
     }

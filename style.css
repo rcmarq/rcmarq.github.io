@@ -60,6 +60,7 @@ nav {
   text-decoration: none;
 }
 .nav-brand:hover { text-decoration: none; color: var(--accent); }
+.nav-logo { height: 36px; width: auto; display: block; }
 .nav-links {
   display: flex;
   gap: 1.75rem;
@@ -329,6 +330,29 @@ h3 {
   text-align: center;
 }
 
+/* ── CV Show More ── */
+.cv-extra-wrap {
+  display: none;
+  overflow: hidden;
+}
+.cv-extra-wrap.open { display: block; }
+.cv-show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.35rem 0.9rem;
+  margin-top: 0.25rem;
+  transition: all 0.15s;
+}
+.cv-show-more:hover { background: #063d52; }
+
 /* ── CV ── */
 #cv { padding: 5rem 2rem; }
 .cv-download-box {
@@ -375,7 +399,7 @@ h3 {
   max-width: var(--max-w);
   margin: 0 auto;
 }
-.page-hero p { color: var(--muted); max-width: 560px; margin-top: 0.5rem; }
+.page-hero p { color: var(--muted); max-width: 560px; margin-top: 0.5rem; text-align: justify; hyphens: auto; }
 
 .tools-wrap { background: var(--bg-alt); padding: 3rem 2rem 5rem; }
 .tools-wrap .inner { max-width: var(--max-w); margin: 0 auto; }

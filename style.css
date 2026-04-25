@@ -258,7 +258,7 @@ h3 {
   color: white;
 }
 
-.pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.pub-list { display: flex; flex-direction: column; gap: 1.25rem; min-height: 200px; }
 .pub-card {
   background: white;
   border: 1px solid var(--border);
@@ -295,6 +295,39 @@ h3 {
   transition: all 0.15s;
 }
 .pub-links a:hover { background: var(--accent); color: white; text-decoration: none; }
+
+/* ── Publication Paginator ── */
+.pub-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.pub-pag-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: white;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pub-pag-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.pub-pag-btn:disabled { opacity: 0.3; cursor: default; }
+.pub-pag-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 60px;
+  text-align: center;
+}
 
 /* ── CV ── */
 #cv { padding: 5rem 2rem; }

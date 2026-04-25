@@ -72,9 +72,9 @@
           ORCID
         </a>
         <a href="https://www.linkedin.com/in/renmarquez/" target="_blank" rel="noopener">
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-  LinkedIn
-</a>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
     </div>
 
@@ -161,6 +161,18 @@
         </div>
 
       </div><!-- /pub-list -->
+
+      <!-- Paginator -->
+      <div class="pub-paginator">
+        <button class="pub-pag-btn" id="pub-prev" onclick="changePage(-1)" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <span class="pub-pag-label" id="pub-pag-label">1 / 1</span>
+        <button class="pub-pag-btn" id="pub-next" onclick="changePage(1)" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
     </div>
   </section>
 
@@ -214,7 +226,7 @@
         <div class="cv-item-year">2016</div>
         <div class="cv-item-body">
           <h4>Guest Researcher</h4>
-          <p>Japan Agency for Marine Earth Science & Technology (JAMSTEC)</p>
+          <p>Japan Agency for Marine Earth Science &amp; Technology (JAMSTEC)</p>
         </div>
       </div>
       <div class="cv-item">
@@ -419,13 +431,40 @@
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     }, { passive: true });
+
+    /* ── Publication Paginator ── */
+    const PUB_PER_PAGE = 3;
+    let pubPage = 0;
+    let pubFilter = 'all';
+
+    function getVisiblePubs() {
+      return Array.from(document.querySelectorAll('.pub-card')).filter(c =>
+        pubFilter === 'all' || c.dataset.type === pubFilter
+      );
+    }
+    function renderPubs() {
+      const cards = getVisiblePubs();
+      const totalPages = Math.max(1, Math.ceil(cards.length / PUB_PER_PAGE));
+      pubPage = Math.min(pubPage, totalPages - 1);
+      const start = pubPage * PUB_PER_PAGE;
+      document.querySelectorAll('.pub-card').forEach(c => c.style.display = 'none');
+      cards.slice(start, start + PUB_PER_PAGE).forEach(c => c.style.display = '');
+      document.getElementById('pub-pag-label').textContent = `${pubPage + 1} / ${totalPages}`;
+      document.getElementById('pub-prev').disabled = pubPage === 0;
+      document.getElementById('pub-next').disabled = pubPage >= totalPages - 1;
+    }
+    function changePage(dir) {
+      pubPage += dir;
+      renderPubs();
+    }
     function filterPubs(type, btn) {
       document.querySelectorAll('.pub-filter button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.querySelectorAll('.pub-card').forEach(card => {
-        card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
-      });
+      pubFilter = type;
+      pubPage = 0;
+      renderPubs();
     }
+    renderPubs();
   </script>
 
 </body>

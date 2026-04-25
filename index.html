@@ -12,7 +12,10 @@
 
   <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
   <nav>
-    <a href="index.html" class="nav-brand"><img src="files/woodcock.png" alt="Dr. Ren T.C. Marquez" class="nav-logo" style="height:36px;width:auto;display:block;" /></a>
+    <a href="index.html" class="nav-brand" style="display:flex;align-items:center;gap:0.6rem;">
+      <img src="files/woodcock.png" alt="Dr. Ren T.C. Marquez" class="nav-logo" style="height:36px;width:auto;display:block;" />
+      <span id="nav-name" style="color:var(--accent);opacity:0;transition:opacity 0.4s ease;white-space:nowrap;">Ren T.C. Marquez, PhD</span>
+    </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </button>
@@ -436,6 +439,15 @@
       document.querySelectorAll('.dropdown-menu a, .nav-links > li > a').forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
+    }, { passive: true });
+
+    /* ── Nav name reveal on scroll ── */
+    const navName = document.getElementById('nav-name');
+    const pubSection = document.getElementById('publications');
+    window.addEventListener('scroll', () => {
+      if (pubSection && navName) {
+        navName.style.opacity = window.scrollY >= pubSection.offsetTop - 80 ? '1' : '0';
+      }
     }, { passive: true });
 
     /* ── CV Show More ── */

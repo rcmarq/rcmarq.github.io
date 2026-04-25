@@ -60,7 +60,7 @@ nav {
   text-decoration: none;
 }
 .nav-brand:hover { text-decoration: none; color: var(--accent); }
-.nav-logo { height: 36px; width: auto; display: block; }
+.nav-logo { height: 36px; width: auto; display: block; filter: brightness(0) saturate(100%) invert(19%) sepia(76%) saturate(768%) hue-rotate(168deg) brightness(95%); }
 .nav-links {
   display: flex;
   gap: 1.75rem;

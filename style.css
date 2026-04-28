@@ -592,8 +592,11 @@ h3 {
   }
   .research-img-left,
   .research-img-right {
-    width: 80% !important;
-    margin: 0 auto;
+    width: 100% !important;
+    margin: 0;
+  }
+  .research-img-figure {
+    width: 100% !important;
   }
 }
 

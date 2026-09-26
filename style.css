@@ -193,17 +193,23 @@ h3 {
 }
 .about-text p { color: var(--muted); margin-bottom: 1rem; max-width: 580px; }
 .about-text p:last-child { margin-bottom: 0; }
-.about-photo {
+.about-photo-wrap {
   width: 180px;
   height: 180px;
   border-radius: 50%;
+  border: 3px solid var(--border);
+  overflow: hidden;
+  justify-self: end;
+  flex-shrink: 0;
+}
+.about-photo {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  border: 3px solid var(--border);
-  background: var(--bg-alt);
-  justify-self: end;
+  display: block;
   transform: scale(1.15);
-  transform-origin: center center;
+  transform-origin: center 15%;
 }
 .about-photo-placeholder {
   width: 180px;
@@ -701,7 +707,7 @@ footer a:hover { color: var(--accent); }
 /* ── Responsive ── */
 @media (max-width: 720px) {
   #about { grid-template-columns: 1fr; }
-  .about-photo, .about-photo-placeholder { justify-self: start; order: -1; }
+  .about-photo-wrap, .about-photo-placeholder { justify-self: start; order: -1; }
   .contact-grid { grid-template-columns: 1fr; }
   nav { padding: 0 1.25rem; }
   .nav-links {

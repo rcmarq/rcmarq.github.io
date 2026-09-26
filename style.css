@@ -198,9 +198,12 @@ h3 {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 3px solid var(--border);
   background: var(--bg-alt);
   justify-self: end;
+  transform: scale(1.15);
+  transform-origin: center center;
 }
 .about-photo-placeholder {
   width: 180px;

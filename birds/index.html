@@ -50,14 +50,27 @@
     .overlay-name {
       font-size: 1.05rem;
       font-weight: 700;
-      margin: 0 0 0.3rem;
+      margin: 0 0 0.1rem;
       letter-spacing: -0.01em;
+    }
+    .overlay-sci {
+      font-size: 0.85rem;
+      font-style: italic;
+      opacity: 0.8;
+      margin: 0;
     }
     .overlay-meta {
       font-size: 0.82rem;
       opacity: 0.85;
       line-height: 1.6;
       margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, margin-top 0.35s ease;
+    }
+    .viewer:hover .overlay-meta {
+      max-height: 200px;
+      margin-top: 0.6rem;
     }
     .overlay-meta span { display: block; }
     .overlay-meta .label { opacity: 0.65; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -163,6 +176,7 @@
 
       <div class="viewer-overlay" id="viewer-overlay">
         <p class="overlay-name" id="overlay-name"></p>
+        <p class="overlay-sci" id="overlay-sci"></p>
         <div class="overlay-meta" id="overlay-meta"></div>
       </div>
 
@@ -229,6 +243,7 @@
 
         // Update overlay
         document.getElementById('overlay-name').textContent = b.name || '';
+        document.getElementById('overlay-sci').textContent = b.scientific_name || '';
 
         const meta = document.getElementById('overlay-meta');
         let html = '';
@@ -239,7 +254,7 @@
 
         // Hide overlay if nothing to show
         document.getElementById('viewer-overlay').style.display =
-          (b.name || b.date || b.location || b.description) ? '' : 'none';
+          (b.name || b.scientific_name || b.date || b.location || b.description) ? '' : 'none';
 
         // Counter
         document.getElementById('viewer-counter').textContent =

@@ -231,6 +231,7 @@
       });
 
       goTo(0);
+      startAuto();
     }
 
     function goTo(index) {
@@ -275,7 +276,17 @@
       }, 120);
     }
 
-    function navigate(dir) { goTo(current + dir); }
+    let autoTimer = null;
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function navigate(dir) {
+      goTo(current + dir);
+      startAuto(); // reset timer on manual override
+    }
 
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  navigate(-1);

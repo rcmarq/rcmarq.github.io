@@ -32,7 +32,7 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.9s ease;
     }
     .viewer-img.fade { opacity: 0; }
 
@@ -273,14 +273,14 @@
         // Scroll active thumb into view
         const activThumb = document.querySelectorAll('.thumb')[current];
         if (activThumb) activThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }, 120);
+      }, 800);
     }
 
     let autoTimer = null;
 
     function startAuto() {
       clearInterval(autoTimer);
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
+      autoTimer = setInterval(() => goTo(current + 1), 7000);
     }
 
     function navigate(dir) {

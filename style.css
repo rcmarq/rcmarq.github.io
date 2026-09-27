@@ -4,10 +4,8 @@
    ============================================================ */
 
 :root {
-  --accent:    #094f6a;
+  --accent:    #073e57;
   --accent-lt: #daeef5;
-  --orange:    #e77500;
-  --orange-lt: #fef0dc;
   --text:      #1c1c1e;
   --muted:     #6e6e73;
   --border:    #d1d1d6;
@@ -168,7 +166,7 @@ section:nth-child(even) { background: var(--bg); }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
   margin-bottom: 0.6rem;
 }
 h2 {
@@ -199,7 +197,7 @@ h3 {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 3px solid var(--orange);
+  border: 3px solid var(--border);
   overflow: hidden;
 }
 .about-photo {
@@ -228,8 +226,8 @@ h3 {
   font-weight: 500;
   padding: 0.25rem 0.7rem;
   border-radius: 99px;
-  background: var(--orange-lt);
-  color: var(--orange);
+  background: var(--accent-lt);
+  color: var(--accent);
 }
 
 .social-links { display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
@@ -469,8 +467,8 @@ h3 {
   font-weight: 700;
   padding: 0.15rem 0.6rem;
   border-radius: 99px;
-  background: var(--orange-lt);
-  color: var(--orange);
+  background: var(--accent-lt);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }

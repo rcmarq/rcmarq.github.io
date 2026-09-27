@@ -151,7 +151,7 @@
     <p class="section-label">Birds</p>
     <h2>Lifer!!</h2>
     <div style="display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
-      <p style="margin:0; flex:1; min-width:0; max-width:none;">When I'm not in the lab, you can usually find me out and about looking for LIFERS. See some of my favorite photos of birds here! A section for a blog related to my birding adventures is coming soon!</p>
+      <p style="margin:0; flex:1; min-width:0; max-width:none;">When I'm not in the lab, you can usually find me out and about looking for <a href="https://youtu.be/zl-wAqplQAo?si=FfuYXX5k9xPObg0H&t=498" target="_blank" rel="noopener">LIFERS</a>. See some of my favorite photos of birds here! A section for a blog related to my birding adventures is coming soon!</p>
       <img src="/files/birds/lifer-birding.gif" alt="Lifer birding" style="height:160px; width:auto; border-radius:8px; flex-shrink:0;" />
     </div>
   </div>
@@ -159,7 +159,7 @@
   <!-- ══════════════════════════════ VIEWER ══════════════════════════════ -->
   <div class="viewer-wrap">
     <div class="viewer" id="viewer">
-      <img class="viewer-img" id="viewer-img" src="" alt="" />
+      <img class="viewer-img" id="viewer-img" src="" alt="" onerror="this.style.display='none'" onload="this.style.display=''" />
 
       <div class="viewer-overlay" id="viewer-overlay">
         <p class="overlay-name" id="overlay-name"></p>
@@ -207,6 +207,7 @@
         img.className = 'thumb' + (i === 0 ? ' active' : '');
         img.src = `/files/birds/${encodeURIComponent(b.file)}`;
         img.alt = b.name || b.file;
+        img.addEventListener('error', () => img.style.display = 'none');
         img.addEventListener('click', () => goTo(i));
         strip.appendChild(img);
       });

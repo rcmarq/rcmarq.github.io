@@ -226,7 +226,7 @@
         img.src = `/files/birds/${encodeURIComponent(b.file)}`;
         img.alt = b.name || b.file;
         img.addEventListener('error', () => img.style.display = 'none');
-        img.addEventListener('click', () => goTo(i));
+        img.addEventListener('click', () => { goTo(i); startAuto(); });
         strip.appendChild(img);
       });
 

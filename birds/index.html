@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://renmarquez.science/birds/" />
+  <title>Birds – Dr. Ren T.C. Marquez</title>
+  <meta name="description" content="A gallery of birds observed by Dr. Ren T.C. Marquez." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/icons/egg.png" type="image/png" />
+  <style>
+    .birds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .bird-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: box-shadow 0.18s, transform 0.18s;
+      cursor: pointer;
+    }
+    .bird-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transform: translateY(-2px);
+    }
+    .bird-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-alt);
+    }
+    .bird-info {
+      padding: 0.65rem 0.85rem 0.75rem;
+    }
+    .bird-species {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 0.2rem;
+    }
+    .bird-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .bird-location {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0.1rem 0 0;
+    }
+    .birds-empty {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+    .birds-count {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+      opacity: 0.8;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-caption {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+  <nav>
+    <a href="/" class="nav-brand" style="display:flex;align-items:center;gap:0.6rem;"><img src="/files/nuthatch.png" alt="" class="nav-logo" style="height:36px;width:auto;display:block;" /><span style="color:var(--accent);">Ren T.C. Marquez, PhD</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li class="nav-dropdown" id="about-dropdown">
+        <a href="/#about" onclick="toggleDropdown(event, 'about-dropdown')">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="/#publications">Publications</a></li>
+          <li><a href="/#cv">CV</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/jupyter/">Jupyter</a></li>
+      <li><a href="/birds/" class="active">Birds</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero">
+    <p class="section-label">Birds</p>
+    <h2>Field Observations</h2>
+    <p>A personal gallery of birds I've spotted in the field. Dates are read automatically from photo metadata.</p>
+  </div>
+
+  <!-- ══════════════════════════════ GALLERY ══════════════════════════════ -->
+  <section style="padding-top:2rem; padding-bottom:4rem;">
+    <div class="inner">
+      <div id="birds-count" class="birds-count"></div>
+      <div id="birds-grid" class="birds-grid"></div>
+      <p id="birds-empty" class="birds-empty" style="display:none;">No photos yet — drop some into <code>/files/birds/</code> and add their filenames to <code>/birds/manifest.json</code>.</p>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <footer>
+    <div class="inner">
+      <p style="color:var(--muted);font-size:0.85rem;">© 2026 Ren T.C. Marquez</p>
+    </div>
+  </footer>
+
+  <!-- exifr (lite) for reading EXIF dates from images -->
+  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+    function toggleDropdown(e, id) {
+      const el = document.getElementById(id);
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+      e.preventDefault();
+    }
+
+    // Format filename → species name: "american-robin.jpg" → "American Robin"
+    function toSpeciesName(filename) {
+      return filename
+        .replace(/\.[^.]+$/, '')           // remove extension
+        .replace(/[-_]/g, ' ')             // dashes/underscores → spaces
+        .replace(/\b\w/g, c => c.toUpperCase()); // title case
+    }
+
+    function formatDate(date) {
+      if (!date) return null;
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    async function loadBirds() {
+      const res = await fetch('/birds/manifest.json');
+      const files = await res.json();
+
+      const grid = document.getElementById('birds-grid');
+      const empty = document.getElementById('birds-empty');
+      const countEl = document.getElementById('birds-count');
+
+      if (!files.length) {
+        empty.style.display = '';
+        return;
+      }
+
+      // Load all photos and extract EXIF dates in parallel
+      const entries = await Promise.all(files.map(async filename => {
+        const src = `/files/birds/${filename}`;
+        let date = null;
+        try {
+          const exif = await exifr.parse(src, ['DateTimeOriginal', 'CreateDate']);
+          date = exif?.DateTimeOriginal || exif?.CreateDate || null;
+        } catch (e) { /* no EXIF, skip */ }
+        return { filename, src, date };
+      }));
+
+      // Sort newest first (nulls go last)
+      entries.sort((a, b) => {
+        if (!a.date && !b.date) return 0;
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return b.date - a.date;
+      });
+
+      countEl.textContent = `${entries.length} bird${entries.length !== 1 ? 's' : ''} observed`;
+
+      entries.forEach(({ filename, src, date }) => {
+        const species = toSpeciesName(filename);
+        const dateStr = formatDate(date);
+        const caption = dateStr ? `${species} · ${dateStr}` : species;
+
+        const card = document.createElement('div');
+        card.className = 'bird-card';
+        card.innerHTML = `
+          <img class="bird-thumb" src="${src}" alt="${species}" loading="lazy" />
+          <div class="bird-info">
+            <p class="bird-species">${species}</p>
+            ${dateStr ? `<p class="bird-date">${dateStr}</p>` : ''}
+          </div>
+        `;
+        card.addEventListener('click', () => openLightbox(src, caption));
+        grid.appendChild(card);
+      });
+    }
+
+    loadBirds();
+  </script>
+</body>
+</html>

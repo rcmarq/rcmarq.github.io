@@ -169,7 +169,7 @@
     <h2>Lifer!!</h2>
     <div style="display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
       <p style="margin:0; flex:1; min-width:0; max-width:none;">When I'm not in the lab, you can usually find me out and about looking for <a href="https://youtu.be/zl-wAqplQAo?si=FfuYXX5k9xPObg0H&t=498" target="_blank" rel="noopener">LIFERS</a>. See some of my favorite photos of birds here! A section for a blog related to my birding adventures is coming soon!</p>
-      <img src="/files/birds/lifer-birding.gif" alt="Lifer birding" style="height:160px; width:auto; border-radius:8px; flex-shrink:0;" />
+      <img src="/files/birds/lifer-birding.gif" alt="Lifer birding" style="height:107px; width:auto; border-radius:8px; flex-shrink:0;" />
     </div>
   </div>
 
@@ -292,16 +292,27 @@
     }
 
     let autoTimer = null;
+    let paused = false;
 
     function startAuto() {
       clearInterval(autoTimer);
-      autoTimer = setInterval(() => goTo(current + 1), 7000);
+      if (!paused) autoTimer = setInterval(() => goTo(current + 1), 7000);
     }
 
     function navigate(dir) {
       goTo(current + dir);
-      startAuto(); // reset timer on manual override
+      startAuto();
     }
+
+    const viewerEl = document.getElementById('viewer');
+    viewerEl.addEventListener('mouseenter', () => {
+      paused = true;
+      clearInterval(autoTimer);
+    });
+    viewerEl.addEventListener('mouseleave', () => {
+      paused = false;
+      startAuto();
+    });
 
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  navigate(-1);
